@@ -1,0 +1,16 @@
+
+<div1 class = "navmen" id="menu" data-ng-controller="CustomerController as custCtrl" data-ng-init="custCtrl.checkSignIn()">
+     
+  
+    <img id ="logo" src="images/HV Lofi Logo (1).png" alt=""/>
+  
+   <div  font-family = Courier, style="color:black;" monospace id="welcome">{{custCtrl.welcome}}</div>
+   
+   <li><a href=".">Home</a></li>
+  <li> <a href="products.html" data-ng-if="custCtrl.signedIn">Browse Products</a></li>
+   <li><a href="cart.html" data-ng-if="custCtrl.signedIn">View Cart</a></li>
+   <li><a href="#" data-ng-if="custCtrl.signedIn" data-ng-click="custCtrl.signOut()">Sign Out</a></li>
+  <li> <a href="signin.html" data-ng-if="!custCtrl.signedIn">Sign In</a></li>
+   
+</div1>
+ 

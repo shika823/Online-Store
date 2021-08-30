@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="ShoppingApp">
+    <head>
+        <title>cart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/shopping.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+
+
+    <body data-ng-controller="ShoppingCartController as cartCtrl"  >
+
+
+        <div data-ng-include="'menu.html'" ></div>
+
+
+
+
+        <h1>Shopping Cart</h1>
+
+
+
+        <table class="center" data-ng-controller="ShoppingCartController as cartCtrl">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in cartCtrl.items">
+                    <td>{{item.product.name}} </td>
+                    <td>{{item.product.listPrice}}</td>
+                    <td>{{item.quantityPurchased}}</td>
+                    <td>{{item.getItemTotal()}}  </td>
+
+                </tr>
+                 <tr>
+                    <td>Total Cost</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{cartCtrl.total}}</td>
+                </tr>
+            
+            <tbody>
+        </table>
+        <br>
+        <br>
+<button ng-click="cartCtrl.checkout()"> Checkout Cart </button>
+    </body>
+</html>
+

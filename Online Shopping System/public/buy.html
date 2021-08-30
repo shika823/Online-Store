@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="ShoppingApp">
+
+    <head>
+        <title>buy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/shopping.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+
+    <body data-ng-controller="ShoppingCartController as cartCtrl">
+
+
+        <div data-ng-include="'menu.html'" ></div>
+
+        <h1>How many do you want to buy?</h1>
+        <table class="center">
+
+            <thead>
+
+
+
+            </thead>
+
+
+            <tbody>
+
+                <tr><td>ID
+                    </td> 
+                    <td>{{cartCtrl.selectedProduct.productID}}</td>
+                </tr>
+
+                <tr><td>Name
+                    </td> 
+                    <td>{{cartCtrl.selectedProduct.name}}</td>
+                </tr>
+
+                <tr><td>Description
+                    </td> 
+                    <td>{{cartCtrl.selectedProduct.description}}</td>
+                </tr>
+                <tr><td>Price
+                    </td> 
+                    <td>{{cartCtrl.selectedProduct.listPrice}}</td>
+                </tr>
+                <tr><td>Quantity Available
+                    </td> 
+                    <td>{{cartCtrl.selectedProduct.quantityInStock}}</td>
+                </tr>
+
+
+
+
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <form class="form-inline" >
+            <fieldset>
+                <legend>Quantity To Buy </legend>
+
+                <label for="amount">How Many:</label>
+                <input id = "amount" type="number"  data-ng-model="amount" name="amount" min = "1" max = {{cartCtrl.selectedProduct.quantityInStock}}>
+                <button ng-click="cartCtrl.addCart(amount)"> Add to Cart</button>
+
+                <br>
+
+            </fieldset>
+        </form>
+    </body>
+</html>
+

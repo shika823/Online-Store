@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="ShoppingApp">
+	<head>
+		<title>create</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/angular.js"></script>
+		<script src="js/angular-resource.js"></script>
+		<script src="js/ngStorage.js"></script>
+		<script src="js/shopping.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+<div data-ng-include="'menu.html'" ></div>
+				<h1>Create An Account</h1>
+
+		<form data-ng-controller="CustomerController as custCtrl" data-ng-submit="custCtrl.registerCustomer(customer)" class="form-inline" >
+			<fieldset>
+				<legend>Account Details</legend>
+				<label for="username">User Name:</label>
+				<input input id = "username" type="username" data-ng-model="customer.userName" required>
+				<br>
+				<label for="firstname">First Name:</label>
+				<input input id = "firstname" type="firstname" data-ng-model="customer.firstName" required>
+				<br>
+				<label for="surname">Surname:</label>
+				<input input id = "surname"  type="surname" data-ng-model="customer.surname" required>
+				<br>
+				<label for="email">Email:</label>
+				<input  input id = "email" type="email" data-ng-model="customer.emailAddress" required>
+				<br>
+				<label for="address">Address:</label>
+				<input input id = "address" type="address" data-ng-model="customer.shippingAddress" required>
+				<br>
+				<label for="password">Password:</label>
+				<input input id = "password" type="password" data-ng-model="customer.password" required>
+				<br>
+				<button type="submit">Create Account</button>
+			</fieldset>
+		</form>
+
+	</body>
+</html>

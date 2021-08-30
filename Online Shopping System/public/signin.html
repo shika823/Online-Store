@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="ShoppingApp">
+	<head>
+		<title>signin</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/angular.js"></script>
+		<script src="js/angular-resource.js"></script>
+		<script src="js/ngStorage.js"></script>
+		<script src="js/shopping.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body ng-controller="CustomerController as custCtrl">
+<div ng-include="'menu.html'" ></div>
+		<h1>Sign In</h1>
+
+		
+
+		<p>{{custCtrl.signInMessage}}</p>
+                <br>
+		<form class="form-inline" ng-submit="custCtrl.signIn(username, password)">
+			<fieldset>
+				<legend>Account Details</legend>
+				<label for="username">User Name:</label>
+				<input id="username" type="text" ng-model="username" name="username">
+				<br>
+				<label for="password">Password:</label>
+				<input id="password" type="password" ng-model="password" name="password">
+				<br>
+				<button type="submit">Sign In</button>
+			</fieldset>
+		</form>
+                <br><br>
+                <p>If you don't have an account then you can create one <a id="create" href="create.html">here</a></p>
+
+	</body>
+</html>
+
+
